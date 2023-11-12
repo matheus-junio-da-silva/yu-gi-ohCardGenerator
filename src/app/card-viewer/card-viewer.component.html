@@ -7,8 +7,8 @@
     <form>
       <!-- Campo para a foto da carta -->
       <label for="cardImage">Foto da Carta</label>
-      <input type="file" id="cardImage" [(ngModel)]="card.image" name="cardImage" accept="image/*" required>
-  
+      <input type="file" id="cardImage" (change)="onImageSelected($event)" accept="image/*" required>
+
       <!-- Campo para o atributo da carta -->
       <label for="cardAttribute">Atributo</label>
       <input type="text" id="cardAttribute" [(ngModel)]="card.attribute" name="cardAttribute" required>
@@ -32,14 +32,19 @@
   
 
 
-<div #cardContainer>
-    <!-- Conteúdo da visualização da carta aqui -->
-    <img [src]="card.image" alt="Card Image">
+<!-- card-viewer.component.html -->
+
+<div #cardContainer class="card-container">
+  <!-- Conteúdo da visualização da carta aqui -->
+  <img [src]="card.image" alt="Card Image">
+  <p>Descrição: {{ card.description }}</p>
+  <div class="stats">
     <p>Atributo: {{ card.attribute }}</p>
     <p>Ataque: {{ card.attack }}</p>
     <p>Defesa: {{ card.defense }}</p>
-    <p>Descrição: {{ card.description }}</p>
+  </div>
 </div>
+
 
 <button (click)="exportCard()">Exportar Carta</button>
   

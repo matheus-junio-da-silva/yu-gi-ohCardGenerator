@@ -17,6 +17,19 @@ export class CardViewerComponent {
     defense: 0,
     description: ''
   };
+  // Método chamado quando uma imagem é selecionada
+  onImageSelected(event: any) {
+    const file = event.target.files[0];
+
+    if (file) {
+      // Converte a imagem para uma URL de dados
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.card.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
   saveCard() {
     // Implemente a lógica para salvar a carta aqui
     console.log('Carta salva:', this.card);

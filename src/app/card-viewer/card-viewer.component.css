@@ -1,0 +1,31 @@
+/* Adicione estilos no seu arquivo card-viewer.component.css */
+
+.card-container {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Yu-Gi-Oh! Font', sans-serif; /* Substitua pela fonte real de Yu-Gi-Oh! se disponível */
+}
+
+.card-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card-container p {
+  margin: 10px 0; /* Adicionando margem para um espaçamento melhor */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 1.5; /* Altura da linha para melhor legibilidade */
+  color: #333; /* Cor do texto */
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
