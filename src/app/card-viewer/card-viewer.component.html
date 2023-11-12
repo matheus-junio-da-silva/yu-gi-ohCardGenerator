@@ -1,0 +1,45 @@
+<p>card-viewer works!</p>
+<!-- card-viewer.component.html -->
+
+
+<div>
+    <h2>Criar Carta Yu-Gi-Oh</h2>
+    <form>
+      <!-- Campo para a foto da carta -->
+      <label for="cardImage">Foto da Carta</label>
+      <input type="file" id="cardImage" [(ngModel)]="card.image" name="cardImage" accept="image/*" required>
+  
+      <!-- Campo para o atributo da carta -->
+      <label for="cardAttribute">Atributo</label>
+      <input type="text" id="cardAttribute" [(ngModel)]="card.attribute" name="cardAttribute" required>
+  
+      <!-- Campo para o ataque da carta -->
+      <label for="cardAttack">Ataque</label>
+      <input type="number" id="cardAttack" [(ngModel)]="card.attack" name="cardAttack" required>
+  
+      <!-- Campo para a defesa da carta -->
+      <label for="cardDefense">Defesa</label>
+      <input type="number" id="cardDefense" [(ngModel)]="card.defense" name="cardDefense" required>
+  
+      <!-- Campo para a descrição da carta -->
+      <label for="cardDescription">Descrição</label>
+      <textarea id="cardDescription" [(ngModel)]="card.description" name="cardDescription" required></textarea>
+  
+      <!-- Botão para enviar o formulário -->
+      <button type="submit" (click)="saveCard()">Salvar Carta</button>
+    </form>
+  </div>
+  
+
+
+<div #cardContainer>
+    <!-- Conteúdo da visualização da carta aqui -->
+    <img [src]="card.image" alt="Card Image">
+    <p>Atributo: {{ card.attribute }}</p>
+    <p>Ataque: {{ card.attack }}</p>
+    <p>Defesa: {{ card.defense }}</p>
+    <p>Descrição: {{ card.description }}</p>
+</div>
+
+<button (click)="exportCard()">Exportar Carta</button>
+  
